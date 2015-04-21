@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style>
+body{
+	width:1200px;
+	margin:5px auto;
+}
+svg text{
+	font-size:12px;
+}
+rect{
+	shape-rendering:crispEdges;
+}
+</style>
+<body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="ps.js"></script>
+<script>
+var input_data=[
+['VERMONT AVENUE', '3RD STREET', 53],
+['VERMONT AVENUE', '6TH STREET', 49],
+['VERMONT AVENUE', '7TH STREET', 27],
+['VERMONT AVENUE', '8TH STREET', 32],
+['VERMONT AVENUE', 'ADAMS BLVD', 39],
+['VERMONT AVENUE', 'BEVERLY BLVD', 57],
+['VERMONT AVENUE', 'JEFFERSON BLVD', 29],
+['VERMONT AVENUE', 'NORMANDIE AVENUE', 14],
+['VERMONT AVENUE', 'OLYMPIC BLVD', 68],
+['VERMONT AVENUE', 'SUNSET BLVD', 28],
+['VERMONT AVENUE', 'WASHINGTON BLVD', 43],
+['VERMONT AVENUE', 'WILSHIRE BLVD', 56],
+['FIGUEROA STREET', '3RD STREET', 40],
+['FIGUEROA STREET', '6TH STREET', 19],
+['FIGUEROA STREET', '7TH STREET', 16],
+['FIGUEROA STREET', '8TH STREET', 19],
+['FIGUEROA STREET', 'ADAMS BLVD', 55],
+['FIGUEROA STREET', 'JEFFERSON BLVD', 41],
+['FIGUEROA STREET', 'SUNSET BLVD', 11],
+['FIGUEROA STREET', 'WASHINGTON BLVD', 31],
+['FIGUEROA STREET', 'WILSHIRE BLVD', 17],
+['OLYMPIC BLVD', '8TH STREET', 1],
+['OLYMPIC BLVD', 'BROADWAY', 9],
+['OLYMPIC BLVD', 'CENTRAL AVENUE', 31],
+['OLYMPIC BLVD', 'HOOVER STREET', 32],
+['OLYMPIC BLVD', 'MAIN STREET', 10],
+['OLYMPIC BLVD', 'NORMANDIE AVENUE', 28],
+['OLYMPIC BLVD', 'SEPULVEDA BLVD', 18],
+['OLYMPIC BLVD', 'VERMONT AVENUE', 35],
+['OLYMPIC BLVD', 'WESTERN AVENUE', 23],
+['ROSCOE BLVD', 'LAUREL CANYON BLVD', 27],
+['ROSCOE BLVD', 'SEPULVEDA BLVD', 42],
+['ROSCOE BLVD', 'VAN NUYS BLVD', 62],
+['SEPULVEDA BLVD', 'OLYMPIC BLVD', 14],
+['SEPULVEDA BLVD', 'SATICOY STREET', 40],
+['SEPULVEDA BLVD', 'SUNSET BLVD', 2],
+['SEPULVEDA BLVD', 'VANOWEN STREET', 43],
+['SEPULVEDA BLVD', 'VICTORY BLVD', 54],
+['SEPULVEDA BLVD', 'WILSHIRE BLVD', 1],
+['SUNSET BLVD', 'FIGUEROA STREET', 19],
+['SUNSET BLVD', 'HOOVER STREET', 2],
+['SUNSET BLVD', 'LAUREL CANYON BLVD', 4],
+['SUNSET BLVD', 'NORMANDIE AVENUE', 38],
+['SUNSET BLVD', 'SEPULVEDA BLVD', 4],
+['SUNSET BLVD', 'VERMONT AVENUE', 21],
+['SUNSET BLVD', 'WESTERN AVENUE', 47],
+['WESTERN AVENUE', '3RD STREET', 33],
+['WESTERN AVENUE', '6TH STREET', 35],
+['WESTERN AVENUE', '7TH STREET', 32],
+['WESTERN AVENUE', 'ADAMS BLVD', 42],
+['WESTERN AVENUE', 'BEVERLY BLVD', 48],
+['WESTERN AVENUE', 'JEFFERSON BLVD', 30],
+['WESTERN AVENUE', 'OLYMPIC BLVD', 39],
+['WESTERN AVENUE', 'SUNSET BLVD', 30],
+['WESTERN AVENUE', 'WASHINGTON BLVD', 50],
+['WESTERN AVENUE', 'WILSHIRE BLVD', 26],
+];
+var width = 1100, height = 1010, margin ={b:0, t:80, l:370, r:50};
+var svg = d3.select("body")
+	.append("svg").attr('width',width).attr('height',(height+margin.b+margin.t))
+	.append("g").attr("transform","translate("+ margin.l+","+margin.t+")");
+var data = [ 
+	{data:bP.partData(input_data,2), id:'Medal', header:["Primary","Secondary", ""]}
+];
+bP.draw(data, svg);
+</script>
+</body>
